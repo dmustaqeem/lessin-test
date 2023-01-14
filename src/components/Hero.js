@@ -9,13 +9,15 @@ import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 
 
 function CarouselItems(props) {
     return (
         <CardWrapper>
             <div className='cardHolder'>
-                <Card sx={{ minHeight: '280px', width: 320 }}>
+                <Card sx={{ minHeight: '280px', width: '100%'}}>
                     <CardCover>
                         <img
                             src={props.item.source}
@@ -32,7 +34,7 @@ function CarouselItems(props) {
                     />
                     <CardContent sx={{ justifyContent: 'flex-end' }}>
                         <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
-                        {props.item.name}
+                            {props.item.name}
                         </Typography>
                     </CardContent>
                 </Card>
@@ -105,44 +107,19 @@ const Hero = () => {
                             <h3 style={{ color: 'white' }}>Areas of Focus</h3>
                         </div>
 
+                        <div className='carousel'>
                         <Carousel>
                             {
                                 items.map((item, i) => <CarouselItems key={i} item={item} />)
                             }
                         </Carousel>
+                        
+                        </div>
+
+
 
                     </div>
                 </div>
-
-                {/* <div className='gridHolder'>
-                    <Grid container spacing={2}>
-                        <Grid item lg={6}>
-                            <Item><img style={{ width: '100%', height: '80%' }} src='/attorney.jpg'></img></Item>
-                        </Grid>
-                        <Grid item lg={6}>
-                            <Item><img style={{ width: '100%', height: '80%' }} src='/Books.jpg'></img></Item>
-                        </Grid>
-                        <Grid item lg={6}>
-                            <Item><img style={{ width: '100%', height: '80%' }} src='/Filler.jpg'></img></Item>
-                        </Grid>
-                        <Grid item lg={6}>
-                            <Item><img style={{ width: '100%', height: '80%' }} src='/injury law.jpg'></img></Item>
-                        </Grid>
-
-                    </Grid>
-
-                    <div className='gridHolder2'>
-                        <Grid container spacing={3}>
-                            <Grid item lg={10}>
-                                <Item> <text style={{ fontFamily: 'Trattatello', fontSize: '200%', marginLeft: '2%' }}>Make an Inquiry Now !</text>
-                                    <Button style={{ fontFamily: 'Trattatello', marginBottom: '1%', marginLeft: '2%' }} variant="contained">Inquiry Page</Button>
-
-                                </Item>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </div> */}
-
             </div>
             <Footer />
         </Wrapper>
@@ -158,8 +135,7 @@ width: 100%;
 .cardHolder{
     height: 100%;
     width: 100%;
-    display: grid;
-    place-content: center;
+    background-color: black;
 }
 `
 
@@ -221,15 +197,20 @@ const Wrapper = styles.main`
     height: 20%;
     width: 100%;
     text-align: center;
+    display: grid;
+    place-content: center;
 }
 .carouselBackground{
     position: absolute;
     background-color: black;
     height: 450px;
-    width: 99%;
+    width: 100%;
     opacity: 0.5;
     border-radius: 20px;
-    margin-left: 0.5%;
+}
+.carousel{
+    height: 80%;
+    width: 100%;
 }
 
 .carouselBackgroundTop{

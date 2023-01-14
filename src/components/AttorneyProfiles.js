@@ -9,15 +9,10 @@ import Section from './Section'
 import Header from './Header'
 import Footer from './Footer'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
-import Carousel from 'react-material-ui-carousel'
-import Card from '@mui/joy/Card';
-import CardCover from '@mui/joy/CardCover';
-import CardContent from '@mui/joy/CardContent';
-import Typography from '@mui/joy/Typography';
+import Carousel from 'react-material-ui-carousel';
 import styles from 'styled-components';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
-
 
 function CarouselItems(props) {
 
@@ -25,47 +20,23 @@ function CarouselItems(props) {
   return (
     <CardWrapper>
       <div className='cardHolder'>
-        <Card sx={{ minHeight: '10%', width: 1000, justifyContent: 'flex-top' }}>
-          <CardCover>
-
-          </CardCover>
-
-          <CardContent sx={{ justifyContent: 'flex-end' }}>
-            <img style={{ width: '50%', justifyContent: 'flex-top-right' }}
-
-              src={props.item.image}
-              srcSet={props.item.image}
-              loading="lazy"
-              alt=""
-            />
-            <h2>
-              {props.item.name} <br></br>
-            </h2>
-
-            <div className='educationHolder'>
-              {props.item.Education1}  <br></br>
-              {props.item.Education2}  <br></br>
-              {props.item.Education3}
-            </div>
-
-            <div className='buttonHolder'>
-              <a style={{ color: 'black' }} href="tel:+2155991400">
-                <div className='callButton'>
-                  <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} />
-                </div>
-              </a>
-              <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
-                <div className='callButtonHolderInner'>
-                  <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} />
-                </div>
-              </a>
-
-            </div>
-
-
-
-          </CardContent>
-        </Card>
+        <div className='card'>
+          <div class='imageHolder'>
+            <img class='imageInner' src='/pen.jpg'/>
+          </div>
+          <div className='employeeDetails'>
+            <div className='employeeName'>{props.item.name}</div>
+            <div className='employeeContact'><CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
+            <div className='employeeInterest'>
+              <h3>Interests</h3>
+              {props.item.intrest}
+              </div>
+              <div className='employeeQualification'>
+              <h3>Specialization</h3>
+              {props.item.Education1}
+              </div>
+          </div>
+        </div>
       </div>
 
     </CardWrapper>
@@ -86,7 +57,7 @@ const AttorneyProfiles = () => {
 
   var items = [
     {
-      image: "/twitter.png",
+      image: "/pen.jpg",
       name: "THOMAS A. KARPINK",
       email: "sasjl@gmail.com",
       phone: "866.920.6403",
@@ -125,59 +96,110 @@ const AttorneyProfiles = () => {
     },
   ]
 
-
-
-  const { openModal } = useModalContext()
-
-  const { isModalOpen, closeModal } = useModalContext()
   return (
     <Wrapper>
       <Header />
-      
+
       <div className='dataHolder'>
-      <div className='backimage'>
-        <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
-      </div>
-      <div className='carouselHolder'>
-        <div className='carouselBackground'></div>
-        <div className='carouselBackgroundTop'>
-          <div className='carouselTitleHolder'>
-            <h3 style={{ color: 'black' }}>Attorney</h3>
-          </div>
-
-          <Carousel>
-            {
-              items.map((item, i) => <CarouselItems key={i} item={item} />)
-            }
-          </Carousel>
-
+        <div className='backimage'>
+          <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
         </div>
-      </div>
-      </div>
 
+
+            
+
+            <div className='transparentBackground'></div>
+            <div className='header'>
+              Attorney
+            </div>
+
+            <div className='carousel'>
+              <Carousel>
+              {
+                items.map((item, i) => <CarouselItems key={i} item={item} />)
+              }
+            </Carousel>
+            </div>
+
+
+
+      </div>
       <Footer />
-
     </Wrapper>
   )
 }
 
 
 export default AttorneyProfiles
-const CardWrapper = styles.div`
-height: 100%;
+const CardWrapper = styles.section`
+height: 350px;
 width: 100%;
 
-
 .imageHolder{
-  height: 50%;
+  height: 100%;
+  width: 50%;
+}
+
+
+.imageInner{
+  height: 100%;
   width: 100%;
+  object-cover: fit;
+  border-radius: 10px;
 }
 
 .cardHolder{
     height: 100%;
     width: 100%;
     display: grid;
-    place-content: center;
+    justify-content: center;
+}
+
+
+.card{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  place-content: center;
+  border-radius: 10px;
+}
+
+.employeeDetails{
+  height: 100%;
+  width: 50%;
+}
+
+
+.employeeName{
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+.employeeContact{
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
+.employeeInterest{
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+}
+
+.employeeQualification{
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  color: black;
+  font-size: 15px;
 }
 `
 
@@ -187,10 +209,10 @@ height: 100vh;
 width: 100%;
 
 
-.dataHolder{
-  height: 100vh;
-  width: 100%;
-}
+  .dataHolder{
+    height: 70vh;
+    width: 100%;
+  }
 
  
  .info-holder{
@@ -208,44 +230,17 @@ width: 100%;
  .backimage{
       position: absolute;
       z-index : -1;
-      height: 100vh;
+      height: 70vh;
       width: 100%;
     }
  
- // image
- carouselHolder{
-  height: 100%;
-  width: 100%;
-  display: grid;
-  background-color: rgb(20, 39, 79);
-  position : absolute;
-}
-
-.carouselTitleHolder{
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-.carouselBackground{
-  position: absolute;
-  background-color: black;
-  height: 100%;
-  width: 99%;
-  opacity: 0.5;
-  border-radius: 20px;
-  margin-left: 0.5%;
-}
-
-.carouselBackgroundTop{
-  z-index: 1;
-}//
  
  .article-holder{
      height: 100%;
      width: 100%;
      color: white;
-     borderBottom: 2px solid #dadada;
-     borderColor: 'white';
+     border-bottom: 2px solid #dadada;
+     border-color: 'white';
      opacity: 1;
      margin-top : -280%;
      
@@ -259,6 +254,41 @@ width: 100%;
    height: 120vh;
    position: relative;
  }
+
+/* New */
+
+.transparentBackground{
+  width: 100%;
+  height: 70vh;
+  background-color: black;
+  opacity: 0.8;
+  position: absolute;
+}
+
+ .header{
+  height: 10%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+ }
+
+ .carousel{
+  height: 90%;
+  width: 100%;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+ }
+
+
+ /*  */
 
 
  .form {
