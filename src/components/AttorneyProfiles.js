@@ -13,7 +13,7 @@ import Carousel from 'react-material-ui-carousel';
 import styles from 'styled-components';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
-
+//i am raja;s gitnpm
 function CarouselItems(props) {
 
 
@@ -25,15 +25,21 @@ function CarouselItems(props) {
             <img class='imageInner' src='/pen.jpg'/>
           </div>
           <div className='employeeDetails'>
-            <div className='employeeName'>{props.item.name}</div>
-            <div className='employeeContact'><CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
+            <div className='employeeName'>{props.item.name} <CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
+            <div style={{}}>
+              <p className='barAdmission'>Bar Admission {props.item.BarAdmission}</p>
+            </div>
+            
             <div className='employeeInterest'>
-              <h3>Interests</h3>
+              <div className='titlediv'>Areas Of Pratice</div>
               {props.item.intrest}
               </div>
               <div className='employeeQualification'>
-              <h3>Specialization</h3>
-              {props.item.Education1}
+              <div className='titlediv'>Education & Honours</div>
+              {props.item.Education1} <br></br>
+              {props.item.Education2} <br></br>
+              {props.item.Education3} 
+             
               </div>
           </div>
         </div>
@@ -72,7 +78,7 @@ const AttorneyProfiles = () => {
 
 
       image: "/pen.jpg",
-      name: "THOMAS A. KARPINK",
+      name: "Jeffrey R. Lessin",
       email: "sasjl@gmail.com",
       phone: "866.920.6403",
       fax: "215.599.0120",
@@ -105,9 +111,6 @@ const AttorneyProfiles = () => {
           <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
         </div>
 
-
-            
-
             <div className='transparentBackground'></div>
             <div className='header'>
               Attorney
@@ -137,7 +140,9 @@ width: 100%;
 
 .imageHolder{
   height: 100%;
-  width: 50%;
+  width: 25%;
+  flex : left;
+  padding:1%;
 }
 
 
@@ -147,23 +152,41 @@ width: 100%;
   object-cover: fit;
   border-radius: 10px;
 }
+.titlediv{
+  font-size : 150%;
 
+}
+.barAdmission{
+
+  color : black;
+  font-size : 15px;
+
+}
 .cardHolder{
+    margin-left : 06%;
     height: 100%;
     width: 100%;
     display: grid;
     justify-content: center;
+
+  }
+.interest{
+
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
-
 .card{
-  width: 100%;
+
+  width: 85%;
   height: 100%;
   background-color: white;
   display: flex;
   place-content: center;
-  border-radius: 10px;
-}
+  justify-content: center;
+  border-radius: 25px;
+  
+ }
 
 .employeeDetails{
   height: 100%;
@@ -174,9 +197,10 @@ width: 100%;
 .employeeName{
   width: 100%;
   height: 10%;
-  text-align: center;
+  text-align: left;
   color: black;
-  font-size: 20px;
+  margin-top : 2%;
+  font-size: 110%;
 }
 .employeeContact{
   width: 100%;
@@ -189,15 +213,16 @@ width: 100%;
 .employeeInterest{
   width: 100%;
   height: 30%;
-  text-align: center;
+  text-align: left;
   color: black;
   font-size: 15px;
+
 }
 
 .employeeQualification{
   width: 100%;
   height: 30%;
-  text-align: center;
+  text-align: left;
   color: black;
   font-size: 15px;
 }

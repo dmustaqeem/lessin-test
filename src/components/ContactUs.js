@@ -22,19 +22,18 @@ const ContactUs = () => {
                 <div
                     className='info-holder'
                 >
-
-                    <div className='article-holder'>
-                        <h2 style={{ opacity: '1' }}> Contact Us </h2>
-                    </div>
                 </div>
             </div>
 
             <div className='form-holder'>
-
                 <div class="form">
-                    <div class="title">Welcome</div>
-                    <div class="subtitle">Fill the form we will contact you</div>
-                    <div class="input-container ic1">
+                    <div class="title">Call a Pennsylvania Civil Rights Attorney</div>
+                    <div class="subtitle">If you have experienced discrimination, police misconduct or other violations of your civil rights, you do have recourse. Our Philadelphia attorneys are available to advise you and help you take action to uphold your rights and obtain compensation for your damages and losses. With more than 60 years of combined experience, our lawyers are aggressive advocates who do not give up. Call us today.
+
+You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
+
+The use of the Internet or this form for communication with the firm or any individual member of the firm does not establish an attorney-client relationship. Confidential or time-sensitive information should not be sent through this form.</div>
+                    <div class="input-container ic1" style = {{ backgroundcolor: 'white'}}>
                         <input id="firstname" class="input" type="text" placeholder=" " />
                         <div class="cut"></div>
                         <label for="firstname" class="placeholder">Name</label>
@@ -77,10 +76,9 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center; 
     width: 100%;
-    height: auto;
-    position: relative;
+    height: 100%;
+    position: absolute;
   }
-  
   .info-holder{
     top: 0;
     display: grid;
@@ -115,28 +113,29 @@ const Wrapper = styled.section`
 
 
   .form {
-    background-color: #15172b;
+    background-color: brown;
     border-radius: 20px;
     box-sizing: border-box;
     height: auto;
     padding: 20px;
-    width: 320px;
+    width: 100%;
+    margin-bottom : 50%;
   }
-  
   .title {
-    color: #eee;
+    color: white;
     font-family: sans-serif;
     font-size: 36px;
     font-weight: 600;
-    margin-top: 30px;
   }
   
   .subtitle {
-    color: #eee;
+    color: white;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 10px;
+    height : 100%;
+    width : 100%;
   }
   
   .input-container {
@@ -161,7 +160,7 @@ const Wrapper = styled.section`
   }
   
   .input {
-    background-color: #303245;
+    background-color: white;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -171,10 +170,11 @@ const Wrapper = styled.section`
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
+    color: black;
   }
   
   .cut {
-    background-color: #15172b;
+    background-color: brown;
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -212,15 +212,16 @@ const Wrapper = styled.section`
   }
   
   .input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
+    color: white;
   }
   
   .input:focus ~ .placeholder {
-    color: #dc2f55;
+    color: white;;
   }
   
   .submit {
-    background-color: #08d;
+    background-color: #050A30;
+    font-size : 112px;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
