@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import { FaWindowClose } from 'react-icons/fa'
-import { useModalContext } from '../context/modal_context'
-import Contact from './Contact'
-import Article from './Article'
-import Filler from './Filler'
-import Section from './Section'
 import Header from './Header'
 import Footer from './Footer'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
@@ -13,7 +7,7 @@ import Carousel from 'react-material-ui-carousel';
 import styles from 'styled-components';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
-//i am raja;s gitnpm
+
 function CarouselItems(props) {
 
 
@@ -25,21 +19,17 @@ function CarouselItems(props) {
             <img class='imageInner' src='/pen.jpg'/>
           </div>
           <div className='employeeDetails'>
-            <div className='employeeName'>{props.item.name} <CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
-            <div style={{}}>
-              <p className='barAdmission'>Bar Admission {props.item.BarAdmission}</p>
-            </div>
-            
+            <div className='employeeName'>{props.item.name}</div>
+            <div className='employeeContact'><CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
             <div className='employeeInterest'>
-              <div className='titlediv'>Areas Of Pratice</div>
+              <h3>Interests</h3>
               {props.item.intrest}
               </div>
               <div className='employeeQualification'>
-              <div className='titlediv'>Education & Honours</div>
+              <h3>Education & Honours</h3>
               {props.item.Education1} <br></br>
               {props.item.Education2} <br></br>
               {props.item.Education3} 
-             
               </div>
           </div>
         </div>
@@ -78,7 +68,7 @@ const AttorneyProfiles = () => {
 
 
       image: "/pen.jpg",
-      name: "Jeffrey R. Lessin",
+      name: "THOMAS A. KARPINK",
       email: "sasjl@gmail.com",
       phone: "866.920.6403",
       fax: "215.599.0120",
@@ -110,12 +100,14 @@ const AttorneyProfiles = () => {
         <div className='backimage'>
           <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
         </div>
-
             <div className='transparentBackground'></div>
+            <div className='textHolder'>
             <div className='header'>
-              Attorney
+            PENNSYLVANIA CIVIL RIGHTS ATTORNEYS
             </div>
-
+            <div className='innerData'>Our team of lawyers provides experience, determination and a commitment to pursuing the best possible outcome in civil rights matters. If you have experienced police brutality, assault in prison, false arrest or other violations of your constitutional rights, you have options. Our Pennsylvania law firm can file suit against the at-fault agency, police department or prison and seek compensation for the damages you suffered.</div>
+            
+            </div>
             <div className='carousel'>
               <Carousel>
               {
@@ -140,53 +132,39 @@ width: 100%;
 
 .imageHolder{
   height: 100%;
-  width: 25%;
-  flex : left;
-  padding:1%;
+  width: 50%;
+  display: grid;
+  place-content: center;
 }
 
 
 .imageInner{
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
   object-cover: fit;
   border-radius: 10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04),
+    0px 2px 6px rgba(9, 55, 53, 0.08), 0px 16px 24px rgba(9, 55, 53, 0.1),
+    0px 24px 32px rgba(9, 55, 53, 0.14);
+   background-color: white;
 }
-.titlediv{
-  font-size : 150%;
 
-}
-.barAdmission{
-
-  color : black;
-  font-size : 15px;
-
-}
 .cardHolder{
-    margin-left : 06%;
     height: 100%;
     width: 100%;
     display: grid;
     justify-content: center;
-
-  }
-.interest{
-
-  font-family: sans-serif;
-  font-weight: bold;
 }
 
-.card{
 
-  width: 85%;
+.card{
+  width: 100%;
   height: 100%;
   background-color: white;
   display: flex;
   place-content: center;
-  justify-content: center;
-  border-radius: 25px;
-  
- }
+  border-radius: 10px;
+}
 
 .employeeDetails{
   height: 100%;
@@ -199,13 +177,12 @@ width: 100%;
   height: 10%;
   text-align: left;
   color: black;
-  margin-top : 2%;
-  font-size: 110%;
+  font-size: 20px;
 }
 .employeeContact{
   width: 100%;
   height: 10%;
-  text-align: center;
+  text-align: left;
   color: black;
   font-size: 20px;
 }
@@ -216,7 +193,6 @@ width: 100%;
   text-align: left;
   color: black;
   font-size: 15px;
-
 }
 
 .employeeQualification{
@@ -226,6 +202,65 @@ width: 100%;
   color: black;
   font-size: 15px;
 }
+@media only screen and (max-width: 600px) {
+  height: 850px;
+  width: 100%;
+
+  .card{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+  }
+
+  .imageHolder{
+    height: 100%;
+    width: 100%;
+  }
+
+  .imageInner{
+    width: 100%;
+    height: 90%;
+  }
+
+  .employeeDetails{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .employeeDetails{
+  }
+  .employeeName{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .employeeContact{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .employeeInterest{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+  }
+  .employeeQualification{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin-top: 45px;
+  }
+}
 `
 
 
@@ -233,65 +268,42 @@ const Wrapper = styled.section`
 height: 100vh;
 width: 100%;
 
-
-  .dataHolder{
-    height: 70vh;
-    width: 100%;
+.dataHolder{
+  height: 50vh;
+  width: 100%;
   }
-
- 
- .info-holder{
-   top: 0;
-   display: grid;
-   position: absolute;
-   height: 50%;
-   width: 100%;
-   justify-content: center;
-   place-content: center;
-   align-items: center;
-   border-radius: 25px;
-   z-index: 1;
- }
- .backimage{
-      position: absolute;
-      z-index : -1;
-      height: 70vh;
-      width: 100%;
-    }
- 
- 
- .article-holder{
-     height: 100%;
-     width: 100%;
-     color: white;
-     border-bottom: 2px solid #dadada;
-     border-color: 'white';
-     opacity: 1;
-     margin-top : -280%;
-     
- }
-
- .form-holder{
-   display: grid;
-   justify-content: center;
-   align-items: center; 
-   width: 100%;
-   height: 120vh;
-   position: relative;
- }
+.backimage{
+  position: absolute;
+  z-index : -1;
+  height: 50vh;
+  width: 100%;
+}
 
 /* New */
 
 .transparentBackground{
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
 }
 
+.dataHolder{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-content: center; 
+}
+
+.textHolder{
+  width: 100%;
+  height: 50vh;
+}
+
  .header{
-  height: 10%;
+  height: 20%;
   width: 100%;
   position: relative;
   display: grid;
@@ -301,6 +313,20 @@ width: 100%;
   letter-spacing: 1px;
   color: white;
  }
+
+ .innerData{
+  height: 80%;
+  width: 80%;
+  position: relative;
+  display: grid;
+  place-content: center;
+  text-align:center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+  background-color: aqua;
+ }
+
 
  .carousel{
   height: 90%;
@@ -313,134 +339,32 @@ width: 100%;
  }
 
 
- /*  */
-
-
- .form {
-   background-color: #15172b;
-   border-radius: 20px;
-   box-sizing: border-box;
-   height: auto;
-   padding: 20px;
-   width: 320px;
- }
- 
- .title {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 36px;
-   font-weight: 600;
-   margin-top: 30px;
- }
- 
- .subtitle {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 16px;
-   font-weight: 600;
-   margin-top: 10px;
- }
- 
- .input-container {
-   height: 50px;
-   position: relative;
-   width: 100%;
- }
-
- .input-container2 {
-   height: 100px;
-   position: relative;
-   width: 100%;
-   margin-top: 30px;
- }
- 
- .ic1 {
-   margin-top: 40px;
- }
- 
- .ic2 {
-   margin-top: 30px;
- }
- 
- .input {
-   background-color: #303245;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   font-size: 18px;
-   height: 100%;
-   outline: 0;
-   padding: 4px 20px 0;
-   width: 100%;
- }
- 
- .cut {
-   background-color: #15172b;
-   border-radius: 10px;
-   height: 20px;
-   left: 20px;
-   position: absolute;
-   top: -20px;
-   transform: translateY(0);
-   transition: transform 200ms;
-   width: 76px;
- }
- 
- .cut-short {
-   width: 70px;
- }
- 
- .input:focus ~ .cut,
- .input:not(:placeholder-shown) ~ .cut {
-   transform: translateY(8px);
- }
- 
- .placeholder {
-   color: #65657b;
-   font-family: sans-serif;
-   left: 20px;
-   line-height: 14px;
-   pointer-events: none;
-   position: absolute;
-   transform-origin: 0 50%;
-   transition: transform 200ms, color 200ms;
-   top: 20px;
- }
- 
- .input:focus ~ .placeholder,
- .input:not(:placeholder-shown) ~ .placeholder {
-   transform: translateY(-30px) translateX(10px) scale(0.75);
- }
- 
- .input:not(:placeholder-shown) ~ .placeholder {
-   color: #808097;
- }
- 
- .input:focus ~ .placeholder {
-   color: #dc2f55;
- }
- 
- .submit {
-   background-color: #08d;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   cursor: pointer;
-   font-size: 18px;
-   height: 50px;
-   margin-top: 38px;
-   // outline: 0;
-   text-align: center;
-   width: 100%;
- }
- 
- .submit:active {
-   background-color: #06b;
- }
-
  @media only screen and (max-width: 600px) {
- 
+  height: 100vh;
+  width: 100%;
+
+  .dataHolder{
+    height: 150vh;
+    width: 100%;
+  }
+
+  .transparentBackground{
+  width: 100%;
+  height: 150vh;
+  background-color: black;
+  opacity: 0.8;
+  position: absolute;
+}
+
+.carousel{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+ }
+
  }
 `
