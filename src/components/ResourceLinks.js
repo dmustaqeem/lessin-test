@@ -1,41 +1,66 @@
-import styled from 'styled-components'
+import styleM from 'styled-components'
 import React, { useState, useEffect } from 'react'
 import { FaWindowClose } from 'react-icons/fa'
 import { useModalContext } from '../context/modal_context'
-import Contact from './Contact'
-import Article from './Article'
-import Filler from './Filler'
-import Section from './Section'
 import Footer from './Footer'
 import Header from './Header'
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const ResourceLinks = () => {
- const { openModal } = useModalContext()
+  const { openModal } = useModalContext()
 
- const { isModalOpen, closeModal } = useModalContext()
- return (
-  <Wrapper>
-    <Header/>
-   <div className='image-holder'>
-                <img src='./links.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
-                <div
-                    className='info-holder'
-                >
+  const { isModalOpen, closeModal } = useModalContext()
+  return (
+    <Wrapper>
+      <Header />
+      <div className='image-holder'>
+        <img src='./links.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
+        <div
+          className='info-holder'
+        >
 
-                    <div className='article-holder'>
-                        <h2 style={{ opacity: '1' }}> Resource Links </h2>
-                    </div>
-                </div>
-            </div>
-   
-    <Footer/>
-  </Wrapper>
- )
+          <div className='article-holder'>
+            <h2 style={{ opacity: '1' }}> Resource Links </h2>
+          </div>
+        </div>
+      </div>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>xs=4</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>xs=4</Item>
+          </Grid>
+          <Grid item xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Footer />
+    </Wrapper>
+  )
 }
 
 
 export default ResourceLinks
-const Wrapper = styled.section`
+const Wrapper = styleM.section`
 height: 100vh;
  width: 100%;
 

@@ -90,13 +90,15 @@ const Hero = () => {
             <Header />
             <div>
                 <div className='backg'>
-                    <div style={{ width: '70%', height: '100%', display: 'grid' }}>
-                        <div style={{ fontStyle: 'italic', fontFamily: 'sans', width: '60%', color: 'white', height: '100%' }}>
+                <img className='dekstopImage' src='/android-chrome-512x512.png'></img>
+                    <div className='detailsTextHolder'>
+                        <div className='detailsText'>
                             Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
                         </div>
-                        <div className='contactButton'>Contact US</div>
+                        <div className='contactButtonHolder'>
+                            <div className='contactButton'>Contact US</div>
+                            </div>
                     </div>
-                    <img style={{ width: '20%' }} src='/android-chrome-512x512.png'></img>
                 </div>
 
 
@@ -144,15 +146,31 @@ const Wrapper = styles.main`
  width: 100%;
 .backg{
     height: 100%;
-    align-content: center;
     display: flex;
     align-items: center;
-    justify-content: start;
     padding: 5%;
     background-color: rgb(20, 39, 79);
 }
 
- 
+.dekstopImage{
+    width: 20%;
+}
+
+.detailsTextHolder{
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    display: grid;
+}
+.detailsText{
+    font-style: italic;
+    font-family: 'sans';
+    width: 100%;
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+
  .gridHolder{
   margin: 10%;
   marginLeft : 10%,
@@ -171,10 +189,16 @@ const Wrapper = styles.main`
   background-color: black;
 }
 
-.contactButton{
-    width: 60%;
-    color: white;
+.contactButtonHolder{
+    width: 100%;
     height: 100%;
+    place-content: center;
+    text-align: center;
+    display: grid;
+}
+
+.contactButton{
+    color: white;
     padding-top: 2rem;
     place-content:center;
     display: grid; 
@@ -222,8 +246,46 @@ const Wrapper = styles.main`
  }
 
  @media only screen and (max-width: 600px) {
-  .button1{
-  }
+    .backg{
+        height: 100%;
+        align-content: center;
+        display: grid;
+        align-items: center;
+        justify-content: start;
+        padding: 5%;
+        background-color: rgb(20, 39, 79);
+    }
+
+    .dekstopImage{
+        width: 100%;
+    }
+
+    .mobImage{
+        height: 100%;
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 5%;
+        background-color: rgb(20, 39, 79);
+        visibility: visible;
+    }
+
+    .contactButton{
+        width: 100%;
+        color: white;
+        height: 100%;
+        padding-top: 2rem;
+        place-content:center;
+        display: grid; 
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+            color: white;
+            box-shadow: 0 2px var(--clr-primary-10);
+           }
+    }
+    
  }
  @media only screen and (min-width: 600px) {
  }

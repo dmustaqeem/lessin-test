@@ -107,13 +107,13 @@ const Header = () => {
                                 'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Home</MenuItem>
-                            <MenuItem onClick={handleClose}>Firm Overview</MenuItem>
-                            <MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem>
-                            <MenuItem onClick={handleClose}>Attorney Profiles</MenuItem>
-                            <MenuItem onClick={handleClose}>Resource Links</MenuItem>
-                            <MenuItem onClick={handleClose}>Communities</MenuItem>
-                            <MenuItem onClick={handleClose}>Contact Us</MenuItem>
+                             <Link style={{color: 'black'}} to='/home'><MenuItem onClick={handleClose}>Home</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/firmoverview'><MenuItem onClick={handleClose}>Firm Overview</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/practiceareas'><MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/attorneyprofiles'><MenuItem onClick={handleClose}>Attorney Profiles</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/resourcelinks'><MenuItem onClick={handleClose}>Resource Links</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/communities'><MenuItem onClick={handleClose}>Communities</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/contactus'><MenuItem onClick={handleClose}>Contact Us</MenuItem></Link>
                         </Menu>
                     </div>
 
