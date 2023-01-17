@@ -36,21 +36,103 @@ const ResourceLinks = () => {
         </div>
       </div>
 
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={8}>
-            <Item>xs=8</Item>
+      <Box className = 'box-container'>
+        <Grid style ={{marginLeft :'15%',marginTop : '2%'}} container spacing={2}>
+        <Grid style={{borderRadius:'25px'}} item xs={4}>
+            <Item style={{backgroundColor:'#D1E8E3',borderRadius:'25px'}}><div className='titlebar'>
+                 <h2 style = {{color : 'white',backgroundColor:'#0F5959',boxShadow: '1px 1px 5px'}}>General</h2>
+              </div>
+              <div className='links'>
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://maps.google.com/'>Google Maps</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.nws.noaa.gov/'>National Weather Service</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://maps.yahoo.com/'>Yahoo! Maps</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.yellowpages.com/'>YelloPages.com</a>
+              </div>
+              </Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>xs=4</Item>
+            <Item style={{backgroundColor:'#D1E8E3',borderRadius:'25px'}}>
+              <div className='titlebar' style= {{display : 'grid',padding:'10%'}}>
+                 <h2 style = {{color : 'white',backgroundColor:'#0F5959',boxShadow: '1px 1px 5px'}}>News</h2>
+              </div>
+              <div className='links'>
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.nytimes.com/'>New York Times</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.newspapers.com/'>Newspapers Online</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.usatoday.com/'>USA Today</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.wsj.com/'>Wall Street Journal</a>
+                  
+              </div>
+              </Item>
           </Grid>
-          <Grid item xs={4}>
-            <Item>xs=4</Item>
-          </Grid>
-          <Grid item xs={8}>
-            <Item>xs=8</Item>
-          </Grid>
+          
+          
         </Grid>
+
+      <br></br>
+        
+        <Grid style ={{marginLeft :'15%'}} container spacing={2}>
+        <Grid item xs={4}>
+            <Item style={{backgroundColor:'#D1E8E3',borderRadius:'25px'}}>
+              <div className='titlebar'>
+                 <h2 style = {{color : 'white',backgroundColor:'#0F5959',boxShadow: '1px 1px 5px'}}>Legal</h2>
+              </div>
+              <div className='links'>
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.uscourts.gov/'>US Court</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://west.thomson.com/'>West</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.westlaw.com/'> West Law</a>
+                  
+              </div>
+
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item style={{backgroundColor:'#D1E8E3',borderRadius:'25px'}}><div className='titlebar'>
+                 <h2 style = {{color : 'white',backgroundColor:'#0F5959',boxShadow: '1px 1px 5px'}}>Search Engines</h2>
+              </div>
+              <div className='links'>
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.google.com/'>Google</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://search.msn.com/'>MSN</a>
+                  
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://search.yahoo.com/'>Yahoo!</a>
+                
+              </div>
+              </Item>
+          </Grid>
+          </Grid>
+        <br></br>
+        <Grid style ={{marginLeft :'31%'}}container spacing={2}>
+        <Grid item xs={4}>
+            <Item style={{ backgroundColor:'#D1E8E3',borderRadius:'25px'}}>
+              
+              
+
+              <div className='titlebar'>
+                 <h2 style = {{color : 'white',backgroundColor:'#0F5959',boxShadow: '1px 1px 5px'}}>Government</h2>
+              </div>
+              <div className='links'>
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'https://www.usa.gov/'>FirstGov</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.loc.gov/'>Library of Congress</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.house.gov/'>U.S. House of Representatives</a>
+              
+                  <a style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.senate.gov/'>U.S. Senate</a>
+                  
+                  <a  style ={{boxShadow: '1px 1px 5px'}} className='link' href = 'http://www.whitehouse.gov/'>White House</a>
+              
+              </div>
+              </Item>
+          </Grid>
+          </Grid> 
       </Box>
 
       <Footer />
@@ -62,8 +144,8 @@ const ResourceLinks = () => {
 export default ResourceLinks
 const Wrapper = styleM.section`
 height: 100vh;
- width: 100%;
-
+width: 100%;
+ 
 
 .image-holder{
    display: inline;
@@ -73,6 +155,51 @@ height: 100vh;
    height: auto;
    position: relative;
  }
+ .image-news{
+  padding : 1%;
+  width : 100%;
+  z-index : -1;
+}
+.back-image{
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.box-container{
+  flexGrow: 2;
+  background-color ;
+  padding: 1%;
+  width: 80%;
+  border-radius : 30px;
+  margin-left: 10%;
+}
+.image-card{
+
+  z-index: -1;
+  position:relative;
+  height: 100%;
+  width: 100%;
+
+}
+.link {
+  color: black;
+  text-decoration: none;
+  padding:1%;
+  margin: 1%;
+  background-color: #B1D4E0;
+  font-family : Times-Roman;
+}
+.link:hover {
+  color: white;
+  align: center; 
+  background-color: #555;
+}
+.links{
+
+  padding : 10%;
+  text-color : black;
+}
  
  .info-holder{
    top: 0;
@@ -85,6 +212,23 @@ height: 100vh;
    align-items: center;
    border-radius: 25px;
    z-index: 1;
+ }
+ .titlebar{
+    height : 25%;
+    width : 100%;
+    text-align: center;
+    display : grid;
+    padding:10%;
+  }
+
+ .links{
+
+  
+    font-size : 30px;
+    display : grid;
+    padding : 2%;
+
+
  }
  
  .article-holder{
